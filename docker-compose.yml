@@ -3,6 +3,7 @@ version: '3'
 services:
   devops_app:
     build: .
-    ports:
+    container_name: devops_app
+    ports:                    # Map port 5000 from container to host
       - "5000:5000"
-    restart: unless-stopped
+    restart: unless-stopped   # Restart container automatically unless manually stopped

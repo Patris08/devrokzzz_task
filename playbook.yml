@@ -1,10 +1,13 @@
-- hosts: localhost
-  tasks:
+- name: Run Docker container
+  hosts: localhost
+  become: false  # We set become: false because the Docker commands can be run by the normal user, no sudo is needed
+
+  tasks:                  # Task to start the DevOps application container
     - name: Run DevOps container
       docker_container:
         name: devops_app
         image: devops_app
-        state: started
+        state: started    # Ensure container is running
         ports:
-          - "5000:5000"
-        restart_policy: always
+          - "5000:5000"    # Map host port to container port
+        restart_policy: always  # Always restart container if it stops

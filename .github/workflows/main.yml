@@ -1,24 +1,24 @@
 name: DevOps CI Pipeline
 
-on:
+on:                         # Trigger workflow on push to main branch
   push:
     branches: [ main ]
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Use Ubuntu runner for the job
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repository   # Download repository code
         uses: actions/checkout@v4
 
       - name: Build Docker image
         run: docker build -t devops_app .
 
-      - name: Run container
+      - name: Run container         # Run container in detached mode and expose port 5000
         run: docker run -d -p 5000:5000 devops_app
 
-      - name: Test container
+      - name: Test container  # Wait for container to start and test application endpoint
         run: |
           sleep 5
           curl -f http://localhost:5000 || exit 1
