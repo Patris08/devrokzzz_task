@@ -1,4 +1,4 @@
-# DevOps Task – Recruitment Exercise
+# DevOps Task 
 
 Minimal Flask application demonstrating Docker, Docker Compose, GitHub Actions CI, and Ansible automation.
 
