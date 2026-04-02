@@ -1,4 +1,10 @@
 - hosts: localhost
   tasks:
     - name: Run DevOps container
-      command: docker run --rm -p 5000:5000 devops_app
+      docker_container:
+        name: devops_app
+        image: devops_app
+        state: started
+        ports:
+          - "5000:5000"
+        restart_policy: always
