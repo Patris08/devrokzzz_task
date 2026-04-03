@@ -18,14 +18,13 @@ Minimal Flask application demonstrating Docker, Docker Compose, GitHub Actions C
 ---
 
 ## About
-This repository contains a simple Python Flask application for a recruitment task at Rokezzz. The goal is to demonstrate practical DevOps skills by:
+This repository contains a simple Python Flask application. The goal is to demonstrate practical DevOps skills by:
 
 - Creating a minimal Flask application.
 - Containerizing the application with Docker.
 - Automating builds and testing with GitHub Actions.
 - Deploying using Docker Compose or Ansible.
 
-The application exposes a single endpoint at `/` that returns a confirmation message.
 
 ---
 
